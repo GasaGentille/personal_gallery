@@ -6,11 +6,20 @@ from django.db import models
 class Location(models.Model):
     location= models.CharField(max_length =30)
 
+    def __str__(self):
+        return self.location
+        
+    def save_location(self):
+        self.save()
+
 class Category(models.Model):
     category = models.CharField(max_length =30)
 
+    def __str__(self):
+        return self.category
+
 class Image(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to = 'images/')
     image_name = models.CharField(max_length =30)
     image_description = models.CharField(max_length =30)
     location =  models.ForeignKey(Location)
@@ -21,4 +30,9 @@ class Image(models.Model):
 
     def save_image(self):
         self.save()
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        images = cls.objects.filter(category__icontains=search_term)
+        return images
 

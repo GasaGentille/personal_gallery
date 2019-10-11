@@ -1,5 +1,21 @@
 {%extends 'base.html'%}
 {% block content %}
-<h1> Welcome to my galery images</h1>
 {{block.super}}
+<h1> Welcome to my galery images</h1>
+
+{% for image in images %}
+
+<div class="row">
+  <!-- displaying News articles -->
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+     <h2>{{ image.image_description}} </h2>
+  </div>
+      <!--Display news Article images  -->
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img src="{{image.image.url}}" class="img-responsive" alt="Image">
+      </div>
+
+</div>
+{% endfor %}
+
 {% endblock %}

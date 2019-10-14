@@ -1,9 +1,10 @@
 {% extends 'image.html'%}
 {% block content %}{{block.super}}
-<div class="col-md-6">
+
 {% for locat in image %}
 <p>{{locat.location.location}}</p>
-<img src="{{locat.image.url}}" >{% endfor %}
+<div class="col-md-6">
+<img src="{{locat.image.url}}">{% endfor %}
 
 </div>
 {% endblock %}

@@ -17,6 +17,10 @@ class Category(models.Model):
 
     def __str__(self):
         return self.category
+    class Meta:
+        ordering = ['category']
+    def save_category(self):
+        self.save()
 
 class Image(models.Model):
     image = models.ImageField(upload_to = 'images/')
@@ -33,6 +37,11 @@ class Image(models.Model):
 
     @classmethod
     def search_by_category(cls,search_term):
-        images = cls.objects.filter(category__icontains=search_term)
+        images = cls.objects.filter(category__category__icontains=search_term)
         return images
+
+    @classmethod
+    def filter_by_location(cls,location):
+        image = cls.objects.filter(location__location__icontains = location)
+        return image    
 

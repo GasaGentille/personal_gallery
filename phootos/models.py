@@ -35,6 +35,12 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
+    def save_delete(self):
+        self.delete()
+
+    def update_image(self):
+        images = Image.objects.filter_by(id = 2).update(name = 'animal')
+
     @classmethod
     def search_by_category(cls,search_term):
         images = cls.objects.filter(category__category__icontains=search_term)

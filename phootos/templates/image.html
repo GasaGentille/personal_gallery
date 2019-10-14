@@ -28,8 +28,8 @@
               <div class="modal-body">
                 <img src="{{image.image.url}}" class="img-responsive" alt="Image" style="font-size:200px;">
                 <p><strong>Description</strong>: {{ image.image_description}} </p>
-                <p><strong></strong>Location:</stong> {{ image.location}} </p>
-                <p><strong></strong>Category:</stong> {{ image.category}} </p>
+                <p><strong>Location:</stong> {{ image.location}} </p>
+                <p><strong>Category:</stong> {{ image.category}} </p>
                 <button class="btn btn-success" onclick="copyurl('{{image.id}}-url')">Image link</button>
                 <input type="text" value="http://127.0.0.1:8000{{image.image.url}}" id="{{image.id}}-url">
 

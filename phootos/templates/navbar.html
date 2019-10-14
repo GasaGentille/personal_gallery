@@ -12,12 +12,18 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="{% url 'image' %}">Galery</a>
-        <a class="navbar-brand" href="{% url 'location' location='kimihurura' %}">location</a>
-        <li href="{% url 'location' location='kimihurura' %}">kimihurura</li>
-        <li href="{% url 'location' location='kimironko' %}">kimironko</li>
-        <li href="{% url 'location' location='gasabo' %}">gasabo</li>
+        
       </div>
-   
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              location
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'location' location='kimihurura' %}">kimihurura</a>
+            <a class="dropdown-item" href="{% url 'location' location='kimironko' %}">kimironko</a>
+            <a class="dropdown-item" href="{% url 'location' location='gasabo' %}">gasabo </a>
+          </div>
+        </div>
     
 
     <!-- Adding a search form  -->

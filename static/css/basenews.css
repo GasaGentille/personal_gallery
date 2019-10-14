@@ -6,12 +6,12 @@ body{
   margin-top: 20px;
 }
 
-  .column {
+  .colcol-md-4  {
     flex: 50%;
     padding: 0 4px;
   }
 
-  .column img , .col-md-6{
+  .col-md-4 img{
     margin-top: 8px;
     vertical-align: middle;
     height:200px;

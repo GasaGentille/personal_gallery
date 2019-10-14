@@ -3,9 +3,9 @@
 {{block.super}}
 
 {% for locat in image %}
-<div class="container"></div>
+<div class="container">
 <p>{{locat.location.location}}</p>
-<div class="col-md-6">
+<div class="col-md-4">
 <img src="{{locat.image.url}}">{% endfor %}
 
 </div>

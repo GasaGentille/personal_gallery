@@ -37,11 +37,18 @@ class ImageTestClass(TestCase):
 class LocationTestCase(TestCase):
     # Set up method
     def setUp(self):
-        self.kimuhurura = Location(location = "kimuhurura")
+        self.new_location= Location(location = "kimuhurura")
+        # self.kimuhurura = Location(location = "kimuhurura")
 
     # Testing  instance
     def test_instance(self):
-        self.assertTrue(isinstance(self.kimuhurura,Location))
+        self.assertTrue(isinstance(self.new_location,Location))
+
+    # Testing Save Method
+    def test_save_location(self):
+        self.new_location.save_location()
+        location = Location.objects.all()
+        self.assertTrue(len(location) > 0) 
 
 class CategoryTestCase(TestCase):
     # Set up method

@@ -15,6 +15,9 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()
 
+    def update_location(self):
+        location = Location.objects.filter_by(id = 2).update(location = 'kigali')
+
 class Category(models.Model):
     category = models.CharField(max_length =30)
 
@@ -26,6 +29,9 @@ class Category(models.Model):
         self.save()
     def delete_category(self):
         self.delete()
+
+    def update_category(self):
+        category = Category.objects.filter_by(id = 2).update(category = 'sport')
 
 class Image(models.Model):
     image = models.ImageField(upload_to = 'images/', null=True)

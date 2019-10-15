@@ -34,21 +34,21 @@ class ImageTestClass(TestCase):
         updated = Image.objects.filter(image_name='ibiryo').first()
         self.assertNotEqual(image.image_name, updated.image_name)    
 
-# class LocationTestCase(TestCase):
-#     # Set up method
-#     def setUp(self):
-#         self.kimuhurura = Location(location = "kimuhurura")
+class LocationTestCase(TestCase):
+    # Set up method
+    def setUp(self):
+        self.kimuhurura = Location(location = "kimuhurura")
 
-#     # Testing  instance
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.kimuhurura,Location))
+    # Testing  instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.kimuhurura,Location))
 
-# class CategoryTestCase(TestCase):
-#     # Set up method
-#     def setUp(self):
-#         self.tourist = Category(category = "tourist")
+class CategoryTestCase(TestCase):
+    # Set up method
+    def setUp(self):
+        self.tourist = Category(category = "tourist")
 
-#     # Testing  instance
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.tourist,Category))
+    # Testing  instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.tourist,Category))
     

@@ -2,12 +2,17 @@
 {% block content %}
 {{block.super}}
 
-{% for locat in image %}
-<div class="container">
-<p>{{locat.location.location}}</p>
-<div class="col-md-4">
-<img src="{{locat.image.url}}">{% endfor %}
 
-</div>
+<div class="container">
+    <div class="row">
+        {% for locat in image %}
+
+        <div class="col-md-4">
+            <h3>{{locat.location.location}}</h3>
+            <img src="{{locat.image.url}}">
+
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

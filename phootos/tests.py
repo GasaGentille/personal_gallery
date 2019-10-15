@@ -71,4 +71,12 @@ class CategoryTestCase(TestCase):
         self.new_category.save_category()
         category = Category.objects.all()
         self.assertTrue(len(category) > 0)
+
+    #test delete
+    def test_delete_image(self):
+        self.new_category.save_category()
+        category = Category.objects.filter(category='tourist').first()
+        delete = Category.objects.filter(category = category.category).delete()
+        category = Category.objects.all()
+        self.assertFalse(len(category)==1) 
     

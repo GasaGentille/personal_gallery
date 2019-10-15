@@ -49,6 +49,14 @@ class LocationTestCase(TestCase):
         location = Location.objects.all()
         self.assertTrue(len(location) > 0) 
 
+    #test delete
+    def test_delete_image(self):
+        self.new_location.save_location()
+        location = Location.objects.filter(location='kimuhurura').first()
+        delete = Location.objects.filter(location = location.location).delete()
+        location = Location.objects.all()
+        self.assertFalse(len(location)==1) 
+
 class CategoryTestCase(TestCase):
     # Set up method
     def setUp(self):

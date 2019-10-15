@@ -25,8 +25,9 @@ class ImageTestClass(TestCase):
         image = Image.objects.filter(image_name='fudu').first()
         delete = Image.objects.filter(image_name = image.image_name).delete()
         images = Image.objects.all()
-        self.assertFalse(len(images)==1) 
+        self.assertFalse(len(images)==1)
 
+    # Testing Save Method
     def test_update_image(self):  
         self.new_image.save_image()
         image = Image.objects.filter(image_name='fudu').first()
@@ -57,6 +58,14 @@ class LocationTestCase(TestCase):
         location = Location.objects.all()
         self.assertFalse(len(location)==1) 
 
+    # Testing Update Method
+    def test_update_image(self):  
+        self.new_location.save_location()
+        location = Location.objects.filter(location='kimuhurura').first()
+        update = Location.objects.filter(location=location.location).update(location='gasabo')
+        updated = Location.objects.filter(location='gasabo').first()
+        self.assertNotEqual(location.location, updated.location)  
+
 class CategoryTestCase(TestCase):
     # Set up method
     def setUp(self):
@@ -79,4 +88,12 @@ class CategoryTestCase(TestCase):
         delete = Category.objects.filter(category = category.category).delete()
         category = Category.objects.all()
         self.assertFalse(len(category)==1) 
+
+    # Testing Update Method
+    def test_update_image(self):  
+        self.new_category.save_category()
+        category = Category.objects.filter(category='tourist').first()
+        update = Category.objects.filter(category=category.category).update(category='animal')
+        updated = Category.objects.filter(category='animal').first()
+        self.assertNotEqual(category.category, updated.category)   
     

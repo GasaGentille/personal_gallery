@@ -20,7 +20,7 @@ Admin ability to the pplication:
 - update images deetails 
 
 
-You can visit the application using: 
+You can visit the application using: https://phootoss.herokuapp.com/
 
 ## SetUp/Installation instructions
 

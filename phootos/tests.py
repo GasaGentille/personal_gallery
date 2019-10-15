@@ -7,7 +7,7 @@ class ImageTestClass(TestCase):
     def setUp(self):
         # Creating a new image and saving it
         self.new_image= Image(image ='images/', image_name ='fudu', image_description = "food image")
-        
+
     # Testing  instance
 
     def test_instance(self):
@@ -27,17 +27,29 @@ class ImageTestClass(TestCase):
         images = Image.objects.all()
         self.assertFalse(len(images)==1)
 
-    def test_search_by_category(self):
-        images = Image.objects.all()
-        self.assertFalse(len(images)>0)
-
     # Testing Update Method
     def test_update_image(self):  
         self.new_image.save_image()
         image = Image.objects.filter(image_name='fudu').first()
         update = Image.objects.filter(image_name=image.image_name).update(image_name='ibiryo')
         updated = Image.objects.filter(image_name='ibiryo').first()
-        self.assertNotEqual(image.image_name, updated.image_name)    
+        self.assertNotEqual(image.image_name, updated.image_name)  
+
+    #  Test search method
+    def test_search_by_category(self):
+        images = Image.objects.all()
+        self.assertFalse(len(images)>0)
+   
+    #  Test search method
+    def test_search_by_category(self):
+        images = Image.objects.all()
+        self.assertFalse(len(images)>0)
+
+    #  Test location method
+    def test_filter_by_location(self):
+        images = Image.objects.all()
+        self.assertFalse(len(images)>0)
+
 
 class LocationTestCase(TestCase):
     # Set up method

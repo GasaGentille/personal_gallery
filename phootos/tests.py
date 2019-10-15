@@ -5,9 +5,9 @@ from .models import Image,Location,Category
 class ImageTestClass(TestCase):
 
     def setUp(self):
-        # Creating a new editor and saving it
+        # Creating a new image and saving it
         self.new_image= Image(image ='images/', image_name ='fudu', image_description = "food image")
-
+        
     # Testing  instance
 
     def test_instance(self):
@@ -27,7 +27,11 @@ class ImageTestClass(TestCase):
         images = Image.objects.all()
         self.assertFalse(len(images)==1)
 
-    # Testing Save Method
+    def test_search_by_category(self):
+        images = Image.objects.all()
+        self.assertFalse(len(images)>0)
+
+    # Testing Update Method
     def test_update_image(self):  
         self.new_image.save_image()
         image = Image.objects.filter(image_name='fudu').first()

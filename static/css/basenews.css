@@ -24,7 +24,11 @@ body{
     height:200px;
 
   }
-  /* nav{
+  nav{
     background-color: black;
-  } */
+    width: 80%;
+    margin:auto;
+    margin-top: 0%;
+    height:100px;
+  }
 

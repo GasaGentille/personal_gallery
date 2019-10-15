@@ -38,9 +38,8 @@ class LocationTestCase(TestCase):
     # Set up method
     def setUp(self):
         self.new_location= Location(location = "kimuhurura")
-        # self.kimuhurura = Location(location = "kimuhurura")
-
-    # Testing  instance
+        
+        # Testing  instance
     def test_instance(self):
         self.assertTrue(isinstance(self.new_location,Location))
 
@@ -53,9 +52,15 @@ class LocationTestCase(TestCase):
 class CategoryTestCase(TestCase):
     # Set up method
     def setUp(self):
-        self.tourist = Category(category = "tourist")
+        self.new_category = Category(category = "tourist")
 
     # Testing  instance
     def test_instance(self):
-        self.assertTrue(isinstance(self.tourist,Category))
+        self.assertTrue(isinstance(self.new_category,Category))
+
+    # Testing Save Method
+    def test_save_category(self):
+        self.new_category.save_category()
+        category = Category.objects.all()
+        self.assertTrue(len(category) > 0)
     
